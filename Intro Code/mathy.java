@@ -63,16 +63,7 @@ public class mathy
 	{	int j = 0;
 
 
-		for( int i = 0; i<num1.length;i++)
-		{
-			if (num1[i] % 2 != 0)
-			{
-				odd[j] = num1[i];
-				j++;
-			}
-
-		}
-
+		
 
 
 
