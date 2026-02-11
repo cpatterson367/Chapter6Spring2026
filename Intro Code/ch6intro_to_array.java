@@ -25,10 +25,14 @@ public class ch6intro_to_array
             mathy useful = new mathy();
             int x = 50;
             int[] num = new int[20];
+            int[] nums1 = useful.popRandomArray(10,20);
+            int[] evennum = useful.getEven(nums1);
+            
             int[] values = new int[MAX];
             //.length not a method public data
-            int[] oddnum = new int[num.length];
-            int[] evennum = new int[num.length];
+            int[] oddnum = new int[nums1.length];
+            useful.getOdd(nums1,oddnum);
+            
             int[] negnum = new int[MAX];
             
             int[] nums = {1,3,4,6,8,2,4,7,9};
@@ -37,6 +41,21 @@ public class ch6intro_to_array
            {
                System.out.print(nums[i]);
            }
+           
+           System.out.println();
+           
+           for (int i : nums1)
+               System.out.print(i+" ");
+            System.out.println();
+            
+            for (int i : evennum)
+               System.out.print(i+" ");
+            System.out.println();
+            
+            for (int i : oddnum)
+               System.out.print(i+" ");
+            System.out.println();
+           
         /*
     
             System.out.println(Searches.linearSearch(num,look)  );

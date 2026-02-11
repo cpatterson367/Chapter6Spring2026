@@ -2,10 +2,16 @@ import java.util.Random;
 
 public class RotateRight
 {
-	//[1,4,2,5,8,7] rotatesRight to --> [7,1,4,2,5,8]
+    //[1,4,2,5,8,7] rotatesRight to --> [7,1,4,2,5,8]
    public void rotateRight(int[] arr)
    {
-
+    
+       int[] arrRight = new int[arr.length];
+       for (int i = 0,j=arr.length-1; i<arr.length; i++, j--)
+       {
+           arrRight[i] = arr[j];
+       }
+       arr = arrRight;
    }
 
    public static void main(String[] args)
@@ -29,7 +35,7 @@ public class RotateRight
       // Print again to see new order.
       for (int i = 0; i < 10; i++)
       {
-         System.out.println(randoms[i] + " ");
+         System.out.print(randoms[i] + " ");
       }
       System.out.println();
    }

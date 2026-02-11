@@ -7,6 +7,14 @@ public class AdjacentDupes
 
       // Loop through array, checking for duplicates
       // next to each other.
+     boolean flag = false;
+      for (int i = 1; i < arr.length; i++)
+      {
+        if (arr[i] == arr[i-1])
+            flag = true;
+      }
+      
+      return flag;
 
    }
 
