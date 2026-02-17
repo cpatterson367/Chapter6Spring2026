@@ -21,7 +21,7 @@ public class ch6intro_to_array
     public static void main (String[] args)
     {
     
-        /**/
+        /*
             mathy useful = new mathy();
             int x = 50;
             int[] num = new int[20];
@@ -56,6 +56,7 @@ public class ch6intro_to_array
                System.out.print(i+" ");
             System.out.println();
            
+            */
         /*
     
             System.out.println(Searches.linearSearch(num,look)  );
@@ -65,13 +66,13 @@ public class ch6intro_to_array
     
     
             //for each loop
-        /*
+        
     
             useful.getOdd(num,oddnum);
     
     
     
-    
+        */
             //System.out.println("----------SORTING-----------"  );
     
     
@@ -85,7 +86,7 @@ public class ch6intro_to_array
     
             System.out.println(Searches. binarySearch(num,find));
     
-        /*
+        */
     
     
     
@@ -110,33 +111,70 @@ public class ch6intro_to_array
     
                     System.out.println();
                }
-    
+            System.out.println(table[3][4]);
     
         // make a 2d array with an iniitalizer list.
         //print the length of row and col
-        /*
+        
         int [][] scores = { {1,2,3},//6
                             {2,2,3},//7
                             {3,2,3},//8
-                            {4,2,3}    };//9
+                            {4,2,3} };//9
     
         //how many columns
         System.out.println(scores[0].length+"col");
         //how many rows
         System.out.println(scores.length+"row");
-    
+        
+        
         //sum entire 2D array
-        System.out.print("The sum of this array is" );
-    
+        int sum = 0;
+        for (int i = 0; i<scores.length; i++)
+            for (int j = 0; j<scores[i].length; j++)
+            {
+                sum += scores[i][j];
+            }
+        
+        System.out.println("The sum of this array is " +sum );
+        
+        
         //sum a row of 2D array
-        System.out.print("The sum of row "));
+
+        
+        sum = 0;
+        for (int i = 0; i<scores.length; i++)
+        {
+            sum += scores[i][2];
+        }
+        System.out.println("The sum of row 3: " + sum);
     
+        
+        //sum a column of 2D array
+        sum = 0;
+        for (int i = 0; i<scores[0].length; i++)
+        {
+            sum += scores[1][i];
+        }
+        System.out.println("The sum of column 2: " + sum);
+        */
+        
     
-    
-    
-    
-    
-    
+        int[][] test = new int[5][5];
+        for (int i = 0; i<test.length; i++)
+        {
+            for (int j = 0; j<test[i].length; j++)
+            {
+                if (i == j || i == 4-j)
+                {
+                    test[i][j] = i;
+                    
+                }
+                System.out.print(test[i][j] + " ");
+            }
+            System.out.println();
+        }
+        
+        
         /**/
     }// end of main
 
