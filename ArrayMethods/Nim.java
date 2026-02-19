@@ -20,10 +20,11 @@ public class Nim
     
     public void play(Player guy)
     {
-        System.out.println("------------- "+guy.getName()+"'s turn -------------");
+        System.out.println("\n\n------------- "+guy.getName()+"'s turn -------------");
         display();
         System.out.println("Select a pile to take from");
         
+        int stonesTaken = 0;
         boolean flag = true;
         for (int i = 0; i<stones.length; i++)
         {   
@@ -45,9 +46,21 @@ public class Nim
                     System.out.println("3. Bottom");
                 }
             flag = false;
-
-            
         }
+        int choice = kb.nextInt()-1;
+        System.out.println("Enter number of stones to take: ");
+        int numStones = kb.nextInt(), count = 1;
+        
+        for (int i = 0; i<stones[choice].length; i++)
+        {
+            while (count <= numStones)
+                if (stones[choice][i] == 0)
+                {
+                    stones[choice][i] = 1;
+                    count++;
+                }
+        }
+        
     }
     
     public void display()

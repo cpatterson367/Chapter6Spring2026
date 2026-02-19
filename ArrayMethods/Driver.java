@@ -19,18 +19,21 @@ public class Driver
         Player p1 = new Player(kb.next());
         System.out.println("Enter player 2 name: ");
         Player p2 = new Player(kb.next());
-        int[][] stones = new int[][] {{1,1,1},{0,0,0,0,0},{0,0,0,0,0,0,0,0}};
+        int[][] stones = new int[][] {{0,0,0},{0,0,0,0,0},{0,0,0,0,0,0,0,0}};
         
         
         Nim game = new Nim(stones);
-        game.play(p1);
         
-        /*
+        Player current = p1;
+        
         while (!game.complete())
         {
-            
-            game.play(p1);
+            game.play(current);
+            if (current == p1)
+                current = p2;
+            else
+                current = p1;
         }
-        */
+        
     }
 }
