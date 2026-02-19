@@ -1,10 +1,7 @@
 
-/**
- * Write a description of class Nim here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
+// Cole Patterson
+// I made this way harder for myself than I needed to
+
 import java.util.Scanner;
 
 public class Nim
@@ -24,10 +21,11 @@ public class Nim
         display();
         System.out.println("Select a pile to take from");
         
+        
         int stonesTaken = 0;
-        boolean flag = true;
         for (int i = 0; i<stones.length; i++)
         {   
+            boolean flag = true;
             for ( int j = 0; j<stones[i].length; j++)
             {
                 if (stones[i][j] == 0)
@@ -48,19 +46,23 @@ public class Nim
             flag = false;
         }
         int choice = kb.nextInt()-1;
-        System.out.println("Enter number of stones to take: ");
-        int numStones = kb.nextInt(), count = 1;
         
-        for (int i = 0; i<stones[choice].length; i++)
+        System.out.println("Enter number of stones to take: ");
+        int numStones = kb.nextInt(), count=0;
+        
+        while (count < numStones)
         {
-            while (count <= numStones)
+            for (int i = 0; i<stones[choice].length; i++)
+            {
                 if (stones[choice][i] == 0)
                 {
                     stones[choice][i] = 1;
                     count++;
                 }
+                if (count == numStones)
+                    break;
+            }
         }
-        
     }
     
     public void display()

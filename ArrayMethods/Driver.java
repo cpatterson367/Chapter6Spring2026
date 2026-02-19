@@ -35,5 +35,9 @@ public class Driver
                 current = p1;
         }
         
+        
+        
+        System.out.println("\n"+current.getName() + " wins.");
+        
     }
 }
