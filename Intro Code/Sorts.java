@@ -28,6 +28,28 @@ public class Sorts
          numbers[index] = temp;
       }
    }
+   
+   
+   public static void addressSelectionSort (Address[] numbers)
+   {
+      int min;
+      Address temp;
+
+      for (int index = 0; index < numbers.length-1; index++)
+      {
+         min = index;
+         
+         
+         for (int scan = index+1; scan < numbers.length; scan++)
+            if (numbers[scan].getZip() < numbers[min].getZip())
+               min = scan;
+
+         // Swap the values
+         temp = numbers[min];
+         numbers[min] = numbers[index];
+         numbers[index] = temp;
+      }
+   }
 
    //-----------------------------------------------------------------
    //  Sorts the specified array of integers using the insertion
