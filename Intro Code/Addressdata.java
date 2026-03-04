@@ -12,7 +12,9 @@ public class Addressdata
     public static void main (String[] args)
     {
     
-    
+        String name = "balls";
+        System.out.print(name.hashCode());
+        
         //Address [] contacts = new Address [10];
         Address school = new Address ("800 Lancaster Ave.", "Villanova","PA", 19085);
         Address rHome = new Address ("4 Privet Drive", "Lynchburg","OH",60123);
@@ -39,32 +41,34 @@ public class Addressdata
         /**/
         
         
-        /**
+        
         for (Address me: contacts)
         {
             System.out.print(me.hash());
-            System.out.println("-"+me.hash()%40);
+            System.out.println("-"+me.hash()%20);
         }
     
     
-        Address [] hash_array = new Address[4*contacts.length];
+        Address [] hash_array = new Address[2*contacts.length];
     
         for( int i = 0; i<contacts.length;i++)
         {
-            hash_array[contacts[i].hash()%40] = contacts[i];
+            hash_array[contacts[i].hash()%20] = contacts[i];
             
         }
         
-        for (Address me2 :hash_array)
+        for (Address me2 : hash_array)
             System.out.println(me2);
         
-        **/
         
         
+        /*
         Sorts.addressSelectionSort(contacts);
         for (Address a :contacts)
             System.out.println(a);
-    
+        */
+       
+       
         /*
         int hash2 = 0;
         for( int i = 0; i<hash1.length();i++)

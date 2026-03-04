@@ -1,3 +1,4 @@
+
 /**
 *  Edit class to fullfill Purse Requirements
 *
@@ -18,9 +19,17 @@ public class Coin
    /**-----------------------------------------------------------------
    *  Sets up the coin by flipping it initially.
    */
-   public Coin ()
+   public Coin (char type)
    {
       flip();
+      if (type == 'P')
+          amount = .01;
+      if (type == 'N')
+          amount = .05;
+      if (type == 'D')
+          amount = .1;
+      if (type == 'Q')
+          amount = .25;
    }
 
    /**-----------------------------------------------------------------
@@ -33,16 +42,28 @@ public class Coin
 
    /**-----------------------------------------------------------------
    *  Returns true if the current face of the coin is heads.
-   		@return boolean, true if heads
+           @return boolean, true if heads
    */
    public boolean isHeads ()
    {
       return (face == HEADS);
    }
-
+    
+   
+   public double getValue()
+   {
+       return amount;
+   }
+   
+   public char getType()
+   {
+       return type;
+   }
+   
+   
    /**-----------------------------------------------------------------
    *  Returns the current face of the coin as a string.
-   		@return String
+           @return String
    */
    public String toString()
    {
