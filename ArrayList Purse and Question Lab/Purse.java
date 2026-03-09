@@ -1,10 +1,13 @@
 
 import java.util.ArrayList;
+import java.text.NumberFormat;
 
 public class Purse
 {
     //private ArrayList
-
+    
+    NumberFormat fmt =  NumberFormat.getCurrencyInstance();
+    
     ArrayList<Coin> change = new ArrayList<>();
     public Purse (){};
     
@@ -21,6 +24,22 @@ public class Purse
     {
         change.add(acoin);
     }
+    
+    public void remove (char type)
+    {   
+        int j = -1;
+        for (int i = 0; i < change.size(); i++)
+        {
+            if (change.get(i).getType() == type)
+                j = i;
+        }
+        
+        if (j != -1)
+            change.remove(j);
+        else
+            System.out.println("no coin");
+    }
+    
     
     /** Returns the total value of the coins in the array
     *                 list change
@@ -86,7 +105,13 @@ public class Purse
     
     public String toString()
     {
-        return " --";
+        String data = "";
+        for (int i = 0; i<change.size(); i++)
+        {
+            data += (i+1) + ". " + change.get(i).getTypeName() + ": " + fmt.format(change.get(i).getValue()) + "\n";
+        }
+        
+        return data;
     }
 
 }
