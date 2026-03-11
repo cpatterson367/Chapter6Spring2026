@@ -105,11 +105,14 @@ public class Purse
     
     public String toString()
     {
-        String data = "";
+        double ttl = 0;    
+        String data = "\n";
         for (int i = 0; i<change.size(); i++)
         {
             data += (i+1) + ". " + change.get(i).getTypeName() + ": " + fmt.format(change.get(i).getValue()) + "\n";
+            ttl += change.get(i).getValue();
         }
+        data += "Total: " + fmt.format(ttl);
         
         return data;
     }

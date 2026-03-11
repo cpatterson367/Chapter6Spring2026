@@ -20,25 +20,26 @@ public class Coin
    /**-----------------------------------------------------------------
    *  Sets up the coin by flipping it initially.
    */
-   public Coin (char type)
+   public Coin (String type)
    {
       flip();
-      if (type == 'P')
+      type = type.toUpperCase();
+      if (type == "P")
       {
           amount = .01;
           typeName = "Penny";
       }
-      if (type == 'N')
+      if (type == "N")
       {
           amount = .05;
           typeName = "Nickel";
       }
-      if (type == 'D')
+      if (type == "D")
       {
           amount = .1;
           typeName = "Dime";
       }
-      if (type == 'Q')
+      if (type == "Q")
       {
           amount = .25;
           typeName = "Quarter";
