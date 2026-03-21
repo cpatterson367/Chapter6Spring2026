@@ -5,9 +5,11 @@
 //  and withdraw.
 //********************************************************************
 
+//Cole Patterson
+
 import java.text.NumberFormat;
 
-public class Account //implements lockable//,Comparable
+public class Account implements Comparable
 {
     private NumberFormat fmt = NumberFormat.getCurrencyInstance();
     
@@ -120,9 +122,9 @@ public class Account //implements lockable//,Comparable
     
     public int hashCode()
     {
-        Integer code = (acctNumber * (int)Math.pow(2,23));
+        Integer code = (acctNumber * 100003);
         String code1 = code.toString();
-        System.out.println(code);
+        
         code1 = code1.substring(0,8);
         code = Integer.parseInt(code1);
         
@@ -137,6 +139,11 @@ public class Account //implements lockable//,Comparable
     //-----------------------------------------------------------------
     public int compareTo (Object o)
     {
+        Account a = (Account) o;
+        if (acctNumber > a.getAccountNumber())
+            return 1;
+        else if(acctNumber < a.getAccountNumber())
+            return -1;
         return 0;
     }
 }

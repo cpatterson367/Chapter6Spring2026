@@ -1,5 +1,5 @@
 
-
+// Cole Patterson
 
 
 public class AcctMain
@@ -16,10 +16,23 @@ public class AcctMain
         Account p8 = new Account ("Doug Dralle", 4562, 5783.90);
         Account p9 = new Account ("Eric Willhelm", 3208, 3420.75);
         Account p10 = new Account ("Julie Noris", 4568, 9041.49);
-        
         Account[] people = {p1,p2,p3,p4,p5,p6,p7,p8,p9,p10};
         
-        System.out.println(p1.hashCode());
-        System.out.println(p2.hashCode());
+        Sorts.insertionSort(people);
+        for (int i=0; i<people.length; i++)
+        {
+            System.out.println(people[i]);
+        }
+        System.out.println();
+
+        Account[] hashArray = new Account[people.length*2];
+        for (int i=0; i<people.length; i++)
+        {
+            hashArray[people[i].hashCode() % 20] = people[i];
+        }
+        
+        for (int i=0; i<hashArray.length; i++)
+            System.out.println(hashArray[i]);
+        
     }
 }
